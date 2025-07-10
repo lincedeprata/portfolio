@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="My creative portfolio: graphic design, 3D, animation, and more." />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --platinum: #e5e4e2;
+    }body {
+  margin: 0;
+  background-color: #000;
+  color: var(--platinum);
+  font-family: 'Antonio', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+header img {
+  width: 100px;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 10px 0;
+  width: 300px;
+  margin: auto;
+}
+
+.download-box {
+  margin-top: 20px;
+  padding: 15px 30px;
+  border: 2px solid var(--platinum);
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(229, 228, 226, 0.1);
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    left: 100%;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border: none;
+  background: #111;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  background: #111;
+}
+
+.box:hover .overlay {
+  opacity: 1;
+}
+
+.box.expanded {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('video-animation.gif') center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.box-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.box-content img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.box h2 {
+  z-index: 2;
+  font-size: 1.5em;
+  color: var(--platinum);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" />
+    <h1>My Portfolio</h1>
+    <div class="download-box">Download the Game</div>
+  </header>  <section class="grid">
+    <div class="box" onclick="expandBox(this)">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <img src="frame.png" alt="Frame" />
+        <h2>Graphic Design</h2>
+      </div>
+    </div>
+    <div class="box" onclick="expandBox(this)">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <img src="frame.png" alt="Frame" />
+        <h2>Apps</h2>
+      </div>
+    </div>
+    <div class="box" onclick="expandBox(this)">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <img src="frame.png" alt="Frame" />
+        <h2>2D Animation</h2>
+      </div>
+    </div>
+    <div class="box" onclick="expandBox(this)">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <img src="frame.png" alt="Frame" />
+        <h2>3D Modeling</h2>
+      </div>
+    </div>
+    <div class="box" onclick="expandBox(this)">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <img src="frame.png" alt="Frame" />
+        <h2>Interior Design</h2>
+      </div>
+    </div>
+    <div class="box" onclick="expandBox(this)">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <img src="frame.png" alt="Frame" />
+        <h2>Video Editing</h2>
+      </div>
+    </div>
+    <div class="box" onclick="expandBox(this)">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <img src="frame.png" alt="Frame" />
+        <h2>Painting</h2>
+      </div>
+    </div>
+    <div class="box" onclick="expandBox(this)">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <img src="frame.png" alt="Frame" />
+        <h2>Contacts</h2>
+      </div>
+    </div>
+  </section>  <script>
+    function expandBox(element) {
+      document.querySelectorAll('.box').forEach(box => box.classList.remove('expanded'));
+      element.classList.add('expanded');
+    }
+  </script></body>
+</html>
